@@ -64,9 +64,16 @@ pip install -r requirements.txt
 
 <p>
   <h3>
-  Depois de organizar o ambiente, voce pode entrar o no arquivo analise_completa.ipynb e rodar tudo.
+  Depois de organizar o ambiente, voce pode entrar na pasta notebooks e rodar o arquivo analise_completa.ipynb.
   </h3>
 </p>
+
+#
+<h2>Arquivos:</h2>
+
+- **dados/data-test-analytics.csv:** Dados utilizado para a análise
+- **notebooks/analise_completa.ipynb:** Jupyter Notenook que se encontra toda a análise referente aos dados
+- **graficos:** Pasta que contém as imagens geradas pelos códigos no notebook analise_completa.ipynb
 
 
 #
@@ -75,7 +82,7 @@ pip install -r requirements.txt
 <h3>
 O projeto foi divido em 3 etapas:
 
-- Formatacao do Dataset (data-test-analytics.csv)
+- Formatação do Dataset (data-test-analytics.csv)
 - Analise Exploratoria
 - Proximos Passos
 </h3>
@@ -109,7 +116,7 @@ A utilizacao do describe nos permitiu tirar algumas observacoes ja antes mesmo d
 
 Alem disso, e possivel notar que a coluna status indica a situacao da conta do cliente se esta ativa, cancelada ou pausada. E tambem que ao olharmos para a coluna all_orders, ha clientes que nunca compraram.
 
-Por fim, acabei identificando algo bem curioso e decidi checar com este comando
+Por fim, acabei supondo algo e decidi checar com este comando
 
 ```
 query = '''
@@ -123,7 +130,7 @@ query = '''
 
 ps.sqldf(query)
 ```
-Este comando me permitiu ver que nesses dados podemos ter 2 analises distintas, uma para o churn real, que seriam os clientes que ja cancelaram, e outra para o churn estimado, que seriam os clientes cancelados + clientes pausados + clientes ativos sem ordens, pois estes estao a 1 passo de cancelarem.
+Este comando me permitiu ver que nesses dados podemos ter 2 analises distintas, uma para o churn real, que seriam os clientes que ja cancelaram o servico, e outra para o churn estimado, que seriam os servicos cancelados + servicos pausados + servicos ativos sem ordens, pois os pausados e os sem ordens estao a 1 passo de cancelarem.
 </p>
 
 #
@@ -147,11 +154,11 @@ Este comando me permitiu ver que nesses dados podemos ter 2 analises distintas, 
 
   imagem
 
-  Analisando o grafico acima, podemos entender entao que os servicos ativos sao renovados no periodo de 27 a 42 dias.
+  Analisando o grafico acima, podemos entender entao que os servicos ativos costumam ser renovados no periodo de 18 a 51 dias.
 
   imagem
 
-  Podemos notar que mesmo que o canal none possua uma porcentagem de churn maior do que os outros, o canal telegram_whatsapp que de fato recebe algum investimento, possui o churn mais problematico.
+  Podemos notar que embora o canal none possua uma porcentagem de churn maior do que os outros, o canal telegram_whatsapp que de fato recebe algum investimento, possui o churn mais problematico.
 
   imagem
 
