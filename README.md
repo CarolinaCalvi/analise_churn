@@ -181,7 +181,6 @@ Este comando me permitiu ver que nesses dados podemos ter 2 análises distintas,
 
 
 <h2>Análise Exploratória.</h2>
-<h3>
 <p>Durante a análise obtive diversos insights que irei apresentar a seguir
 
 
@@ -250,7 +249,6 @@ o Gráfico acima mostra o possível churn
 
 A partir deste gráfico podemos considerar que o churn possui um grande potencial de aumentar caso nada seja feito
 </p>
-<h3>
 <h2>Conclusão:</h2>
 
 
