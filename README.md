@@ -1,200 +1,268 @@
-<h1>Analise do Churn</h1>
+<h1>Análise do Churn</h1>
+
 
 <h2>Objetivo:</h2 >
 
+
 <p>
-Este projeto possui como objetivo a analise dos dados do arquivo data-test-analytics.csv e a obtencao de insights para as resolucoes dos possiveis problemas que podem ser encontrados durante a analise.
+Este projeto possui como objetivo a análise dos dados do arquivo data-test-analytics.csv e a obtenção de insights para as resoluções dos possíveis problemas que podem ser encontrados durante a análise.
 </p>
 
+
 #
+
 
 <h2>Tecnologias:</h2>
 
-  <table>
-    <tr>
-      <td>Python</td>
-    </tr>
-      <tr>
-      <td>3.10</td>
-    </tr>
-  </table>
+
+ <table>
+   <tr>
+     <td>Python</td>
+   </tr>
+     <tr>
+     <td>3.10</td>
+   </tr>
+ </table>
+
+
 
 
 #
 
-<h2>Pre-requisitos:</h2>
+
+<h2>Pré-requisitos:</h2>
 <p>
 
-- Python
-  - E necessario que a versao esteja entre a 3.7 - 3.10, a versao pode ser baixada nesse site : https://www.python.org/downloads/ ou se voce ja tiver o python instalado, you can check the version passing this codebasta checar a versao com o comando:
 
-  ```
-  python -V
-  ```
+- Python
+ - É necessário que a versão esteja entre a 3.7 - 3.10, a versão pode ser baixada nesse site : https://www.python.org/downloads/ ou se você já tiver o python instalado, you can check the version passing this code basta checar a versão com o comando:
+
+
+ ```
+ python -V
+ ```
+
+
 
 
 </p>
 
 
 
+
+
+
 #
 
 
+
+
 <h2>Criando o ambiente do Python:</h2>
-<p>Crie o ambiente do projeto usando o codigo abaixo.</h3>
+<p>Crie o ambiente do projeto usando o código abaixo.</h3>
+
 
 ```
-python -m venv .venv
+python -m venc .venc
 ```
 <h3>2 - Ativando o ambiente do projeto.</h3>
+
 
 ```
 .venv/bin/activate
 ```
 <h3>3 - instale os pacotes usando o codigo abaixo ou apenas olhe o arquivo e baixe manualmente.</h3>
 
+
 ```
 pip install -r requirements.txt
 ```
 </p>
 
+
 #
+
 
 <h2>Rodando o notebook</h2 >
 
+
 <p>
-  <h3>
-  Depois de organizar o ambiente, voce pode entrar na pasta notebooks e rodar o arquivo analise_completa.ipynb.
-  </h3>
+ <h3>
+ Depois de organizar o ambiente, você pode entrar na pasta notebooks e rodar o arquivo análise completa.ipynb.
+ </h3>
 </p>
+
 
 #
 <h2>Arquivos:</h2>
 
+
 - **dados/data-test-analytics.csv:** Dados utilizado para a análise
-- **notebooks/analise_completa.ipynb:** Jupyter Notenook que se encontra toda a análise referente aos dados
-- **graficos:** Pasta que contém as imagens geradas pelos códigos no notebook analise_completa.ipynb
+- **notebooks/análise completa.ipynb:** Jupyter Notenook que se encontra toda a análise referente aos dados
+- **gráficos:** Pasta que contém as imagens geradas pelos códigos no notebook analise completa.ipynb
+
+
 
 
 #
 
-<h2>Detalahes do projeto:</h2>
+
+<h2>Detalhes do projeto:</h2>
 <h3>
 O projeto foi divido em 3 etapas:
 
+
 - Formatação do Dataset (data-test-analytics.csv)
-- Analise Exploratoria
-- Proximos Passos
+- Análise Exploratória
+- Próximos Passos
 </h3>
 
+
 #
+
 
 <p>
 <h2>Formatando o Dataset</h2>
-Nesta etapa observamos que os dados do tipo data poderiam possuir uma melhor formatacao, e tambem, optei por criar 2 colunas novas, uma de churn (pois e este o objetivo do projeto) e uma de regiao (pois acredito ser sempre uma boa ideia olhar para o macro). Apos isto, resolvi analisar de forma mais ampla o dataset utilizando os seguintes comandos:
+Nesta etapa observamos que os dados do tipo data poderiam possuir uma melhor formatação, e também, optei por criar 2 colunas novas, uma de churn (pois é este o objetivo do projeto) e uma de região (pois acredito ser sempre uma boa ideia olhar para o macro). Após isto, resolvi analisar de forma mais ampla o dataset utilizando os seguintes comandos:
+
 
 ```
-print('Dados Temporais e Numericos:')
+print('Dados Temporais e Numéricos:')
 display(df1.describe().round(2))
 
-print('Dados de Objetos e Categoricos:')
+
+print('Dados de Objetos e Categóricos:')
 display(df1.describe(include=['object','category']))
 ```
-A utilizacao do describe nos permitiu tirar algumas observacoes ja antes mesmo da analise focada no churn:
+A utilização do describe nos permitiu tirar algumas observações já antes mesmo da análise focada no churn:
 
-- Pode-se notar que 505 pessoas cancelaram a sua assinatura, logo, o churn atual e de 505 cliente ou 5.05% dos clientes totais
 
-- A media de recency(Tempo desde a última compra do cliente) pode estar errada por conta de possiveis outliers
+- Pode-se notar que 505 pessoas cancelaram a sua assinatura, logo, o churn atual é de 505 cliente ou 5.05% dos clientes totais
 
-- De fato a algumas colunas que nao valem a pena serem analisadas, pois possuem muitos dados distintos
 
-- A maior quantidade de clientes esta ativa
+- A média de recency(Tempo desde a última compra do cliente) pode estar errada por conta de possíveis outliers
 
-- A maior quantidade de clientes foi adquirida por organic_search
 
-- A maior quantidade de clientes esta no Nordeste
+- De fato a algumas colunas que não valem a pena serem analisadas, pois possuem muitos dados distintos
 
-Alem disso, e possivel notar que a coluna status indica a situacao da conta do cliente se esta ativa, cancelada ou pausada. E tambem que ao olharmos para a coluna all_orders, ha clientes que nunca compraram.
+
+- A maior quantidade de clientes está ativa
+
+
+- A maior quantidade de clientes foi adquirida por organic search
+
+
+- A maior quantidade de clientes está no Nordeste
+
+
+Além disso, é possível notar que a coluna status indica a situação da conta do cliente se está ativa, cancelada ou pausada. E também que ao olharmos para a coluna all orders, há clientes que nunca compraram.
+
 
 Por fim, acabei supondo algo e decidi checar com este comando
 
+
 ```
 query = '''
-    SELECT
-        status,
-        COUNT(status) as qtd_clientes
-    FROM df1
-    WHERE all_orders == 0 OR status == 'paused' OR status == 'canceled'
-    GROUP BY 1
+   SELECT
+       status,
+       COUNT(status) as qtd clientes
+   FROM df1
+   WHERE all_orders == 0 OR status == 'paused' OR status == 'canceled'
+   GROUP BY 1
 '''
+
 
 ps.sqldf(query)
 ```
-Este comando me permitiu ver que nesses dados podemos ter 2 analises distintas, uma para o churn real, que seriam os clientes que ja cancelaram o servico, e outra para o churn estimado, que seriam os servicos cancelados + servicos pausados + servicos ativos sem ordens, pois os pausados e os sem ordens estao a 1 passo de cancelarem.
+Este comando me permitiu ver que nesses dados podemos ter 2 análises distintas, uma para o churn atual, que seriam os clientes que já cancelaram o serviço, e outra para o churn estimado, que seriam os serviços cancelados + serviços pausados + serviços ativos sem ordens, pois os pausados e os sem ordens estão a 1 passo de cancelarem.
 </p>
+
 
 #
 
-<h2>Analise Exploratoria.</h2>
+
+<h2>Análise Exploratória.</h2>
 <h3>
-  <p>Durante a analise obtive diversos insights que irei apresentar a seguir
+<p>Durante a análise obtive diversos insights que irei apresentar a seguir
 
-  imagem
 
-  A partir deste grafico baseado na matriz de correlacao, podemos entender que as variaveis recency, status e deleted_at possuem um alto grau de correlacao com o churn. Sendo assim, iremos analisar essas 3 variaveis prioritariamente.
 
-  imagem
 
-  Churn real que sera melhor analisado a seguir
+![correlacao_churn](https://user-images.githubusercontent.com/128322539/235804901-4074529f-444d-4105-b8ee-ec991c06a732.png)
 
-  imagem
-  imagem
 
-  Com base nos graficos, notas-se que a maior quantidade de churn provem dos clientes mais recentes em comparacao com todo o historico do churn
 
-  imagem
 
-  Analisando o grafico acima, podemos entender entao que os servicos ativos costumam ser renovados no periodo de 18 a 51 dias.
+A partir deste gráfico baseado na matriz de correlação, podemos entender que as variáveis recency, status e deletead possuem um alto grau de correlação com o churn.
+<p></p>
 
-  imagem
 
-  Podemos notar que embora o canal none possua uma porcentagem de churn maior do que os outros, o canal telegram_whatsapp que de fato recebe algum investimento, possui o churn mais problematico.
+- Churn Atual:
 
-  imagem
 
-  Podemos entender em qual regiao podemos dar um foco maior para a resolucao do problema
+ ![churn_atual](https://user-images.githubusercontent.com/128322539/235805496-25d65733-ff09-427a-b53f-c5d984899c6c.png)
 
-  imagem
 
-  Percebesse entao que o churn e diretamente proporcional a quantidade de clientes em uma regiao , quanto mais clientes em uma regiao maior sera o churn nela.
 
-  imagem
 
-  A partir deste simples grafico podemos considerar que o churn possui um grande potencial de mais que quadruplicar (um aumento de 443.76%) em relacao ao atual, indo de 5.05% para 22.41%.
-  </p>
+
+
+<p>
+ Com base no gráfico acima, foi necessária uma análise baseada nos dias para entender em que situação ocorria o churn
+</p>
+
+
+![churn_trimestral](https://user-images.githubusercontent.com/128322539/235805872-82c09a1d-5384-456e-93e8-d4cce2c6f98f.png)
+
+
+
+
+Percebe-se que os clientes mais recentes são os que mais se tornam churn.
+
+
+Por esse motivo, decidi comparar com os assinantes ativos para identificar o perfil dos assinantes em relação a compras
+![frequencia_compras](https://user-images.githubusercontent.com/128322539/235805879-0dfab553-38f6-45ce-b171-9d02e0a75ebd.png)
+
+
+
+Analisando o gráfico acima, podemos entender então que o perfil do assinante ativo, seriam aqueles que fazem compras entre os períodos de 18 e 51 dias, logo, o perfil dos assinantes com potência de se tornarem churn, seriam aquele que compram em períodos após 60 dias
+
+
+Após isto optei por entender onde o churn estava mais presente nas regiões e nos canais de marketing(marketing_source)
+
+
+- Canais de Marketing
+![churn_porcentagem_canais_marketing](https://user-images.githubusercontent.com/128322539/235805885-24b8f617-c010-4dc9-8ab9-dd98222c57a7.png)
+Podemos notar que embora o canal none possua uma porcentagem de churn maior do que os outros, o canal telegram whatsapp que de fato recebe algum investimento, possui o churn mais problemático.
+
+
+- Regiões
+![churn_porcentagem_regiao](https://user-images.githubusercontent.com/128322539/235805883-8237f380-1bab-4e18-8fb6-888f2df5f10a.png)
+
+
+Nota-se que o churn não varia muito entre as regiões
+
+
+- Churn estimado
+![churn_estimado_divido](https://user-images.githubusercontent.com/128322539/235805875-f151efdf-7ca5-4f29-beb6-3a4a027a0857.png)
+o Gráfico acima mostra o possível churn
+![churn_estimado](https://user-images.githubusercontent.com/128322539/235805876-aec28080-c327-46ff-8559-fffd36b826a0.png)
+
+
+A partir deste gráfico podemos considerar que o churn possui um grande potencial de aumentar caso nada seja feito
+</p>
 <h3>
-<h2>Proximos Passos.</h2>
+<h2>Conclusão:</h2>
 
-<h3> Sugestão 1: Adotar o NPS </h3>
-<p>
-Uma possível sugestão para minimizar o churn seria adotar o Net Promoter Score (NPS). Essa metodologia é utilizada para avaliar o grau de satisfação e fidelidade dos clientes em relação a determinada empresa ou produto. Por meio do NPS, é possível coletar feedbacks dos clientes, identificar deficiências no produto ou serviço e até mesmo encontrar as razões para a insatisfação dos clientes.
 
-No caso da Petlove, o NPS pode ser uma forma de entender melhor as necessidades e desejos dos clientes, o que pode ajudar a desenvolver estratégias mais eficazes para manter a fidelidade dos mesmos, evitando o churn dos clientes de longa data. Além disso, é possível utilizar o NPS para converter clientes que cancelaram seus serviços, incentivando-os a retornar e tornar-se novamente assinantes.
-</p>
-<h3>Sugestão 2: Oferecer incentivos nos primeiros meses</h3>
-<p>
-Outra sugestão para minimizar o churn seria oferecer incentivos nos primeiros meses de assinatura, a fim de aumentar a fidelização dos clientes tendo em vista que grande parte do churn provem de clientes que cancelaram suas assinaturas em menos de 1 ano.
+Observou-se que os clientes que mais se tornam churn são clientes que possuem uma taxa de compra inferior a 18 dias e superior a 60 dias e clientes que são atraídos pelo canal de marketing telegram e whatsapp.
 
-Uma estratégia interessante seria oferecer um cupom de desconto para a primeira compra, juntamente com uma oferta do serviço de assinatura, destacando as vantagens de se tornar um assinante. Além disso, a empresa pode desenvolver um programa de recompensas para os clientes mais fiéis, que realizam compras frequentemente e mantém-se ativos por um período prolongado. Isso pode incentivar os clientes a permanecerem na plataforma por mais tempo.
-</p>
-<h3> Sugestão 3: Reativar clientes ativos sem compras</h3>
-<p>
-Ha clientes ativos que não realizam compras na Petlove desde 2017 e que so aumenta ao longo dos anos. Para minimizar o possivel churn, a empresa pode adotar estratégias para reativar esses clientes e incentivá-los a realizar novas compras.
 
-Uma possível solução seria entrar em contato com esses clientes por e-mail ou por mensagens via whatsapp e telegram, oferecendo cupons de desconto com prazo de validade limitado (com cerca de 1 mes de validade), para incentivar a realização de novas compras. Além disso, é importante que na mensagem esteja destacado as vantagens de se tornar um assinante.
 
-Esta solucao nao so aumentaria os clientes adquiridos pelo canal de marketing whatsapp_telegram, como tambem teria grandes chances de diminuir o churn dessa plataforma, alem de valorizar o investimento nesse canal de marketing.
-</p>
+
+
+
+
+
 
 
 
