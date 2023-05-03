@@ -195,7 +195,11 @@ A partir deste gráfico baseado na matriz de correlação, podemos entender que 
 <p></p>
 
 
+<h2> 
+
 - Churn Atual:
+
+</h2>
 
 
 ![churn_atual](https://user-images.githubusercontent.com/128322539/235805496-25d65733-ff09-427a-b53f-c5d984899c6c.png)
@@ -229,19 +233,33 @@ Analisando o gráfico acima, podemos entender então que o perfil do assinante a
 Após isto optei por entender onde o churn estava mais presente nas regiões e nos canais de marketing(marketing_source)
 
 
-- Canais de Marketing
+<h3> 
+
+- Canais de Maeketing:
+
+</h2>
+
 ![churn_porcentagem_canais_marketing](https://user-images.githubusercontent.com/128322539/235805885-24b8f617-c010-4dc9-8ab9-dd98222c57a7.png)
 Podemos notar que embora o canal none possua uma porcentagem de churn maior do que os outros, o canal telegram whatsapp que de fato recebe algum investimento, possui o churn mais problemático.
 
 
-- Regiões
+<h3> 
+
+- Regiões:
+
+</h2>
 ![churn_porcentagem_regiao](https://user-images.githubusercontent.com/128322539/235805883-8237f380-1bab-4e18-8fb6-888f2df5f10a.png)
 
 
 Nota-se que o churn não varia muito entre as regiões
 
 
-- Churn estimado
+<h2> 
+
+- Churn Estimado:
+
+</h2>
+
 ![churn_estimado_divido](https://user-images.githubusercontent.com/128322539/235805875-f151efdf-7ca5-4f29-beb6-3a4a027a0857.png)
 o Gráfico acima mostra o possível churn
 ![churn_estimado](https://user-images.githubusercontent.com/128322539/235805876-aec28080-c327-46ff-8559-fffd36b826a0.png)
