@@ -199,7 +199,7 @@ A partir deste gráfico baseado na matriz de correlação, podemos entender que 
 - Churn Atual:
 
 
- ![churn_atual](https://user-images.githubusercontent.com/128322539/235805496-25d65733-ff09-427a-b53f-c5d984899c6c.png)
+![churn_atual](https://user-images.githubusercontent.com/128322539/235805496-25d65733-ff09-427a-b53f-c5d984899c6c.png)
 
 
 
