@@ -62,7 +62,7 @@ Este projeto possui como objetivo a análise dos dados do arquivo data-test-anal
 
 
 ```
-python -m venc .venc
+python -m venv .venv
 ```
 <h3>2 - Ativando o ambiente do projeto.</h3>
 
